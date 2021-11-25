@@ -9,16 +9,21 @@ import java.util.Set;
 public interface Dictionary {
 
 	/**
-	 * Converts a word to its numeric signature
-	 * @param word The word to convert
-	 * @return Signature of a the word, given as a string but will be integers
+	 * Converts a word into its corresponding signature
+	 * in a cell phone keypad. 
+	 * 
+	 * @param word
+	 *            The word to be converted
+	 * @return The signature
 	 */
 	public String wordToSignature(String word);
 	
 	/**
-	 * Converts a word signature to a list of possible word found in the dictionary
-	 * @param signature The signature to convert
-	 * @return A list of word with the given signature, the type of the list does not matter
+	 * Converts signature number into a potential list of strings
+	 * it can represent
+	 * 
+	 * @param signature The signature to be converted
+	 * @return The list of strings the signature can represent
 	 */
 	public Set<String> signatureToWords(String signature);
 }

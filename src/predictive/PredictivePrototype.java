@@ -34,7 +34,10 @@ public class PredictivePrototype {
 	
 	/**
 	 * Converts signature number into a potential list of strings
-	 * it can represent
+	 * it can represent.
+	 * This implementation is inefficient because not only does this require opening
+	 * and closing the file repeatedly, it is also linear, meaning it will take O(n).
+	 * For a big file containing > 300000 words, this would be very slow
 	 * 
 	 * @param signature The signature to be converted
 	 * @return The list of strings the signature can represent
