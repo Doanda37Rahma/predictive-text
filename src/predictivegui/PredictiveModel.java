@@ -45,9 +45,6 @@ public class PredictiveModel extends Observable {
 		// add to current signature if 2-9 is pressed
 		else 
 			addSig(key);
-
-		// test
-		 System.out.println("key: " + key + ". sig: " + currentSig + ". word: " + currentWord + ". index: " + index);
 		
 		// update the text field
 		setChanged();

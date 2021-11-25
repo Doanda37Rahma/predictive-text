@@ -1,8 +1,5 @@
 package predictive;
 
-import java.util.Set;
-
-
 /**
  * 
  * This is a command-line program for calling the signatureToWords method

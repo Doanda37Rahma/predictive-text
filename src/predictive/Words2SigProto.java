@@ -2,7 +2,7 @@ package predictive;
 import java.util.Arrays;
 
 /**
- * Program to test wordsToSignature method
+ * Program to test wordsToSignature methodr
  *
  */
 public class Words2SigProto {

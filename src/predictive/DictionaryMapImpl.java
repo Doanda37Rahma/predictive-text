@@ -6,6 +6,12 @@ import java.util.*;
 /**
  * Map implementation for dictionary
  *
+ * takes a path to a dictionary and stores the dictionary in hashmap 
+ * which maps each signature to a set of words. HashMap in Java works on 
+ * hashing principles. It is a data structure that allows us to store object 
+ * and retrieve it in constant time O(1) provided we know the key. 
+ * We used hashmap because it allows the efficient insertion of 
+ * new words into the dictionary while still allowing fast look-up.
  */
 public class DictionaryMapImpl implements Dictionary {
 	
