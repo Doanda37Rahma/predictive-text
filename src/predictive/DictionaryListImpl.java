@@ -2,11 +2,13 @@ package predictive;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * List implementation of dictionary
+ *
+ */
 public class DictionaryListImpl  implements Dictionary {
 
 	private ArrayList<WordSig> wordSigList;
-
 
 	/**
 	 * Constructor stores the sorted dictionary 
@@ -14,6 +16,7 @@ public class DictionaryListImpl  implements Dictionary {
 	public DictionaryListImpl() {
 		ArrayList<WordSig> newList = new ArrayList<WordSig>();
 		try {
+			// get words
 			File file = new File("words.txt");
 			Scanner words = new Scanner(file);
 			
@@ -21,6 +24,7 @@ public class DictionaryListImpl  implements Dictionary {
 
 				// getting the word from file
 				String word = words.nextLine().toLowerCase();
+				
 				
 				if (isValidWord(word))
 					newList.add(new WordSig(word, wordToSignature(word)));

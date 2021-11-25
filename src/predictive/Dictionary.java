@@ -2,10 +2,14 @@ package predictive;
 
 import java.util.Set;
 
+/**
+ * Interface for dictionary
+ *
+ */
 public interface Dictionary {
 
 	/**
-	 * Converts a word to its signature
+	 * Converts a word to its numeric signature
 	 * @param word The word to convert
 	 * @return Signature of a the word, given as a string but will be integers
 	 */

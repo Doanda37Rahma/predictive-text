@@ -1,6 +1,10 @@
 package predictive;
 import java.util.Arrays;
 
+/**
+ * Program to test wordsToSignature method
+ *
+ */
 public class Words2SigProto {
 
 	public static void main(String[] args) {

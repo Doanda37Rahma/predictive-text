@@ -3,13 +3,17 @@ package predictive;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Tree implementation of dictionary
+ *
+ */
 public class DictionaryTreeImpl implements Dictionary {
 
     private static final Hashtable<Character, Integer> signatures = new Hashtable<Character, Integer>();
     private DictionaryTreeImpl[] children = new DictionaryTreeImpl[8];
     private Set<String> words = new HashSet<String>();
 
+    // hashtable for word to signature
     static {
         signatures.put('a', 2);
         signatures.put('b', 2);
@@ -57,7 +61,7 @@ public class DictionaryTreeImpl implements Dictionary {
         }
     }
 
-    private DictionaryTreeImpl() {
+    public DictionaryTreeImpl() {
     }
 
     /**
@@ -106,6 +110,11 @@ public class DictionaryTreeImpl implements Dictionary {
         return results;
     }
 
+    /**
+     * Gets trimmed words from children nodes
+     * @param signature The signature
+     * @return Words 
+     */
     public Set<String> getChildWords(String signature) {
         Set<String> results = new HashSet<String>();
         for (DictionaryTreeImpl current :children) {
@@ -119,6 +128,11 @@ public class DictionaryTreeImpl implements Dictionary {
         return results;
     }
 
+    /**
+     * Check if word is valid
+     * @param word Word to be checked
+     * @return Whether word is valid lowercase alphabet
+     */
     private boolean isValidWord(String word) {
         for (char ch : word.toCharArray()) {
             if (ch < 'a' || ch > 'z') {
@@ -128,6 +142,11 @@ public class DictionaryTreeImpl implements Dictionary {
         return true;
     }
 
+    /**
+     * Check if signature is valid
+     * @param signature Signature to be checked
+     * @return Whether signature is valid
+     */
     private boolean isValidSignature(String signature) {
         for (char ch : signature.toCharArray()) {
             if (ch < '2' || ch > '9') {
@@ -141,6 +160,11 @@ public class DictionaryTreeImpl implements Dictionary {
         getNode(signature).words.add(word);
     }
 
+    /**
+     * Traverse from root to leaf node corresponding to the signature
+     * @param signature The signature
+     * @return Node corresponding to the signature
+     */
     private DictionaryTreeImpl getNode(String signature) {
         DictionaryTreeImpl node = this;
         for (char ch : signature.toCharArray()) {
@@ -149,6 +173,11 @@ public class DictionaryTreeImpl implements Dictionary {
         return node;
     }
 
+    /**
+     * Gets the child of the current tree node
+     * @param ch The index corresponding to next number in signature
+     * @return Child of current tree node
+     */
     private DictionaryTreeImpl getChild(char ch) {
         if (ch < '2' || ch > '9') {
             return null;

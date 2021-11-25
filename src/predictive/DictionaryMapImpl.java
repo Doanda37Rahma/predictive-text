@@ -3,7 +3,10 @@ package predictive;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Map implementation for dictionary
+ *
+ */
 public class DictionaryMapImpl implements Dictionary {
 	
 	HashMap<String, Set<String>> map;

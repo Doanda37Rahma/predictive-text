@@ -4,6 +4,10 @@ import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * ÅgPrototypeÅh for the predictive text problem
+ *
+ */
 public class PredictivePrototype {
 	
 
@@ -40,6 +44,7 @@ public class PredictivePrototype {
 		Set<String> wordList = new HashSet<String>();
 		
 		try {
+			// get the file
 			File file = new File("words.txt");
 			Scanner words = new Scanner(file);
 			
@@ -65,7 +70,13 @@ public class PredictivePrototype {
 
 	// Helper/utility methods
 	
-	// TODO comment
+
+	/**
+	 * Check if word matches signature
+	 * @param word The word
+	 * @param signature The signature
+	 * @return Whether word matches signature
+	 */
 	public static boolean wordSigMatches(String word, String signature) {
 
 		if (signature.length() != word.length() || !isValidWord(word))
